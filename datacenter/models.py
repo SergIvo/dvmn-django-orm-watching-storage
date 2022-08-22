@@ -31,18 +31,18 @@ class Visit(models.Model):
     
     def get_duration(self):
         if self.leaved_at:
-    	    return self.leaved_at - self.entered_at
+    	    delta = self.leaved_at - self.entered_at
         else:
-            return localtime() - self.entered_at
+            delta = localtime() - self.entered_at
+        return round(delta.total_seconds())
         
     def is_long(self, minutes):
-        duration = self.get_duration().total_seconds()
+        duration = self.get_duration()
         max_time = minutes * 60
         return bool(duration // max_time)
         
 def format_duration(duration):
-    total_seconds = round(duration.total_seconds())
-    hours = total_seconds // 3600
-    minutes = (total_seconds - hours * 3600) // 60
-    seconds = total_seconds - hours * 3600 - minutes * 60
+    hours = duration // 3600
+    minutes = (duration - hours * 3600) // 60
+    seconds = duration - hours * 3600 - minutes * 60
     return f'{hours}ч {minutes}мин {seconds}сек'
