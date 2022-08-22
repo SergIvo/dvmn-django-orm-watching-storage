@@ -6,8 +6,6 @@ from django.shortcuts import render
 
 
 def storage_information_view(request):
-    # Программируем здесь
-    # Список незакрытых посещений
     not_leaved = Visit.objects.filter(leaved_at=None)
     non_closed_visits = [
         {
@@ -17,6 +15,6 @@ def storage_information_view(request):
         } for visit in not_leaved
     ]
     context = {
-        'non_closed_visits': non_closed_visits,  # не закрытые посещения
+        'non_closed_visits': non_closed_visits,
     }
     return render(request, 'storage_information.html', context)
