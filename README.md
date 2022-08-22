@@ -1,6 +1,6 @@
-* Watching Storage Dashboard *
+# Watching Storage Dashboard
 
-** About **
+## About
 
 This is a small Django application made for educational purposes as part of an online course at [dvmn.org](https://dvmn.org/). Application designed to meet requirements listed in [this lesson](https://dvmn.org/modules/django-orm/lesson/watching-storage/) from Django ORM module of mentioned course.
 
@@ -10,7 +10,7 @@ As a simple control point dashboard, application performs the following tasks:
 * Calculates the duration of visitor's presence in the storage;
 * Format this information to make it more human-readable and presents it via web interface.
 
-** Running the application **
+## Running the application**
 
 1. Download application files from GitHub using `git clone` command:
 ```
