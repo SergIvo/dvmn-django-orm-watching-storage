@@ -28,5 +28,5 @@ pip install -r requirements.txt
 ```
 python main.py
 ```
-
+4. Add data required to establish connection with database, as described in [the lesson](https://dvmn.org/modules/django-orm/lesson/watching-storage/)
 
